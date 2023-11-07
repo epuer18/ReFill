@@ -4,12 +4,11 @@
  * Module dependencies.
  */
 
-import { debug } from "console";
 import app from "../app.js";
 import debugModule from "debug";
+import http from "http";
 
 const debug = debugModule('refill:server');
-let http = require('http');
 
 /**
  * Get port from environment and store in Express.
@@ -34,7 +33,7 @@ server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
- */
+*/
 
 function normalizePort(val) {
   let port = parseInt(val, 10);
