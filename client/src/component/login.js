@@ -37,6 +37,10 @@ const Login = () => {
 
       const data = await response.json();
 
+      if (data.status === "ok") {
+        navigate("/home");
+      }
+
       return data; // Handle the response data as needed
     } catch (err) {
       console.error("There was a problem with the fetch operation:", err);
@@ -50,7 +54,6 @@ const Login = () => {
     sendRequest()
       .then((data) => localStorage.setItem("userId", data.id))
       .then(() => dispath(authActions.login()))
-      .then(() => navigate("/home"));
   };
 
   const handleNavigation = () => {
