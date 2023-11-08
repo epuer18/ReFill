@@ -35,7 +35,7 @@ const Header = () => {
             fontSize: "40px",
           }}
         >
-          Refill
+          ReFill
         </Typography>
 
         {isLoggedIn && (
