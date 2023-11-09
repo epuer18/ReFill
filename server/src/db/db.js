@@ -3,15 +3,14 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// const username = encodeURIComponent("qiwenxin98");
-// const password = encodeURIComponent("Zjjxwjp");
-
 const connectDB = async (collectionChosen) => {
 
-  const mongoUrl =
-    "mongodb+srv://qiwenxin98:Zjjxwjp@cluster0.chnfjby.mongodb.net/?retryWrites=true&w=majority";
+  const mongoUrl = process.env.MONGODB_URI;
+  console.log(mongoUrl)
   const client = new MongoClient(mongoUrl);
-  await client.connect();
+  console.log("Established Connection");
+
+  //await client.connect();
   const db = await client.db("Refill");
   const collection = db.collection(collectionChosen);
   return { client, collection };
