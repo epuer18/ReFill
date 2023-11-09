@@ -25,5 +25,5 @@ app.use(express.static(path.join(__dirname, '../../client/build')));
 app.use("/auth", userRouter);
 app.use("/api", apiRouter);
 
-app.listen(3001, () => console.log("app started at 3001..."));
+app.listen(3000, () => console.log("app started at 3000..."));
 export default app;
