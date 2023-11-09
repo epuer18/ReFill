@@ -16,5 +16,21 @@ function stationDb() {
       }
     };
 
-    
+    me.getStations = async function (query = {}) {
+      const { client, collection } = await connectDB("stations");
+
+      try {
+        const stations = await collection.find(query).toArray();
+  
+        return stations;
+      } finally {
+        await client.close();
+      }
+    };
+
+    return me;
 }
+
+const stationDB = stationDb();
+
+export default stationDB;

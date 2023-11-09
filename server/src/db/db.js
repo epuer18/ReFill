@@ -6,7 +6,6 @@ dotenv.config();
 const connectDB = async (collectionChosen) => {
 
   const mongoUrl = process.env.MONGODB_URI;
-  console.log(mongoUrl)
   const client = new MongoClient(mongoUrl);
   console.log("Established Connection");
 

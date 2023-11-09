@@ -1,10 +1,12 @@
 import express from "express";
+import stationDB  from "../controller/stationController.js";
 
 const router = express.Router();
 
-router.get("/services", async (req, res) => {
-    const services = await myDB.getServices({ MaxElements: 21 });
-    res.json(services);
+router.get("/stations_data", async (req, res) => {
+    const stations = await stationDB.getStations({});
+    res.json(stations);
   });
 
-  export default router
+
+export default router
