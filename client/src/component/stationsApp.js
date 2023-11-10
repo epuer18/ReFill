@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import StationGallery from "./stations.js"
+import "../css/StationGallery.css";
+
 
 //const [query, setQuery] = useState("");
 
@@ -24,25 +27,31 @@ import { useState, useEffect } from "react";
 const Stations = () => {
   let [stations, setStations] = useState([]);
 
-  useEffect(
-    () => {
+  useEffect(() => {
       async function fetchStations(){
         const res = await fetch("/api/stations_data");
         if (!res.ok) {
           console.log("Error fetching", res);
   
           setStations([]);
-          //setError({ msg: "Error fetching", type: "danger" });
           return;
         }
         const data = await res.json();
+        setStations(data);
       }
+      fetchStations();
+      console.log(stations)
     },
     [] 
   );
+
   console.log("Render App");
 
-  return <span>yo</span>
+  return <span>
+ <StationGallery
+            stations={stations.slice(0, 20)}></StationGallery>
+
+  </span>
 }
 
 export default Stations;

@@ -1,7 +1,6 @@
 import connectDB from "../db/db.js";
 import { ObjectId } from "mongodb";
 
-
 /*
 "name": "MIT Engineering Building Drinking Fountain",
     "description": "Located on the third floor near the labs, this water fountain is showing its age. Users suggest a thorough cleaning for better hygiene.",

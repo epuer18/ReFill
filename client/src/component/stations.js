@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function stationGallery({stations}) {  
+export default function StationGallery({stations}) {  
     /* Expect data to be
     "name": 
     "description":
@@ -11,7 +11,7 @@ export function stationGallery({stations}) {
     */
   function renderStation(d, i) {
     return (
-      <div key={`stations_${i}`}>
+      <div className="card" key={`stations_${i}`}>
         <div>{d.name}</div>
         <div>{d.description}</div>
         <div>{d.access_type}</div>
@@ -27,16 +27,17 @@ export function stationGallery({stations}) {
 
   console.log("Redering", stations);
   return (
-    <div className="StationsGallery">
+    <div className="StationGallery">
       {" "}
-      <h2>Water Bottle Stations</h2>
+      <h1>Water Bottle Stations</h1>
+      <span>loading . . . </span>
       <div>{renderStations()}</div>
     </div>
   );
 }
 
-PhotosGallery.propTypes = {
-  photos: PropTypes.arrayOf(
+StationGallery.propTypes = {
+  stations: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
