@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+//const [query, setQuery] = useState("");
 
 /*function SearchBar() {
   // const [query, setQuery] = useState("");
@@ -21,25 +22,25 @@ import { useState, useEffect } from "react";
 */
 
 const Stations = () => {
-  let [photos, setPhotos] = useState([]);
-
-  // A basic test to see if we can get data from the back
-    async function testBack() {
-    console.log("Testing back...");
-    const response = await fetch("/api/stations");
-    const data = await response.json();
-    console.log("Got Data!", data);
-
-    setPhotos(data.photos);
-  }
+  let [stations, setStations] = useState([]);
 
   useEffect(
     () => {
-      testBack();
+      async function fetchStations(){
+        const res = await fetch("/api/stations_data");
+        if (!res.ok) {
+          console.log("Error fetching", res);
+  
+          setStations([]);
+          //setError({ msg: "Error fetching", type: "danger" });
+          return;
+        }
+        const data = await res.json();
+      }
     },
-    [] // This is the dependency array. It is empty, so it will only run once.
+    [] 
   );
-  console.log("Render App photos=", photos);
+  console.log("Render App");
 
   return <span>yo</span>
 }
