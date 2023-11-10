@@ -1,28 +1,7 @@
 import { useState, useEffect } from "react";
-import StationGallery from "./stations.js"
+import StationGallery from "./stations.js";
+import SearchBar from "./searchBar.js"
 import "../css/StationGallery.css";
-
-
-//const [query, setQuery] = useState("");
-
-/*function SearchBar() {
-  // const [query, setQuery] = useState("");
-  let query = "";
-
-  function onInput(evt) {
-    console.log("SearchBar onInput", evt.target.value);
-    // setQuery(evt.target.value);
-
-    query = evt.target.value;
-  }
-
-  return (
-    <div>
-      Search <input className="input-control" type="text" onInput={onInput} />
-    </div>
-  );
-}
-*/
 
 const Stations = () => {
   let [stations, setStations] = useState([]);
@@ -47,11 +26,15 @@ const Stations = () => {
 
   console.log("Render App");
 
-  return <span>
- <StationGallery
-            stations={stations.slice(0, 20)}></StationGallery>
-
-  </span>
+  return <div className="StationGallery">
+    <div className="mb-5">
+      <h1>Water Bottle Filling Stations</h1>
+    </div>
+    <SearchBar></SearchBar>
+    <StationGallery
+                stations={stations.slice(0, 20)}> <SearchBar></SearchBar>
+    </StationGallery>
+  </div>
 }
 
 export default Stations;

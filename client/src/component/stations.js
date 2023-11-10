@@ -12,11 +12,15 @@ export default function StationGallery({stations}) {
   function renderStation(d, i) {
     return (
       <div className="card" key={`stations_${i}`}>
-        <div>{d.name}</div>
-        <div>{d.description}</div>
-        <div>{d.access_type}</div>
-        <div>{d.status}</div>
-        <div>{d.zip_code}</div>
+      <div className="card-body"> 
+      <div className="card-title">{d.name}</div>
+        <div className="card-subtitle">{d.description}</div>
+        <ul>
+          <li>Access: {d.access_type}</li>
+          <li>Status:{d.status}</li>
+          <li>Location Zip Code: {d.zip_code}</li>
+       </ul>
+        </div>
       </div>
     );
   }
@@ -28,10 +32,7 @@ export default function StationGallery({stations}) {
   console.log("Redering", stations);
   return (
     <div className="StationGallery">
-      {" "}
-      <h1>Water Bottle Stations</h1>
-      <span>loading . . . </span>
-      <div>{renderStations()}</div>
+        <div>{renderStations()}</div>
     </div>
   );
 }
