@@ -38,7 +38,7 @@ const Login = () => {
       const data = await response.json();
 
       if (data.status === "ok") {
-        navigate("/home");
+        navigate("/");
         dispath(authActions.login());
       }
 
