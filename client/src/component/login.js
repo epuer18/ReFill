@@ -1,6 +1,6 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { authActions } from "./store";
 import { useNavigate } from "react-router-dom";
 
@@ -39,6 +39,7 @@ const Login = () => {
 
       if (data.status === "ok") {
         navigate("/home");
+        dispath(authActions.login());
       }
 
       return data; // Handle the response data as needed
@@ -51,9 +52,7 @@ const Login = () => {
     e.preventDefault();
     console.log(inputs);
 
-    sendRequest()
-      .then((data) => localStorage.setItem("userId", data.id))
-      .then(() => dispath(authActions.login()))
+    sendRequest().then((data) => localStorage.setItem("userId", data.id));
   };
 
   const handleNavigation = () => {
