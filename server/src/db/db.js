@@ -4,10 +4,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const connectDB = async (collectionChosen) => {
-
-  const mongoUrl = process.env.MONGODB_URI;
-  const client = new MongoClient(mongoUrl);
-  console.log("Established Connection");
+  const client = new MongoClient(process.env.MONGO_URL);
+  await client.connect();
 
   //await client.connect();
   const db = await client.db("Refill");
@@ -16,3 +14,5 @@ const connectDB = async (collectionChosen) => {
 };
 
 export default connectDB;
+
+// Try if else for two database!!!

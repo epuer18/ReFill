@@ -1,7 +1,6 @@
 import connectDB from "../db/db.js";
 import { ObjectId } from "mongodb";
 
-
 function userDb() {
   const me = {};
   me.createUser = async (user) => {
