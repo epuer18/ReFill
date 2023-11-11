@@ -1,16 +1,26 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function SearchBar() {
-    const [query, setQuery] = useState("");
-  
-    function onInput(evt) {
-      console.log("SearchBar onInput", evt.target.value);
-      setQuery(evt.target.value);
-    }
-
-    return (
-      <div>
-        Filter by Zip Code <input className="input-control" type="text" onInput={onInput} />
-      </div>
-    );
+export default function SearchBar({ query, setQuery }) {
+  function onInput(evt) {
+    setQuery(evt.target.value);
   }
+
+  return (
+    <div>
+      <label className="form-label">
+        Filter By Zip Code:{""}
+        <input
+          id="search"
+          className="form-control"
+          type="search"
+          value={query}
+          onInput={onInput}
+        ></input>
+      </label>
+    </div>
+  );
+}
+SearchBar.propTypes = {
+  query: PropTypes.string.isRequired,
+  setQuery: PropTypes.func.isRequired,
+};

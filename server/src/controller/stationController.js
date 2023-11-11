@@ -27,11 +27,16 @@ function stationDb() {
       }
     };
 
-    me.getStations = async function (query = {}) {
+    me.getStations = async function (query = "") {
       const { client, collection } = await connectDB("stations");
+      let queryObj = {}
+      console.log("Hi" + query)
+      if (query != ""){
+        queryObj = { zip_code: { $regex: `${query}`, $options: "i" } };
+      } 
 
       try {
-        const stations = await collection.find(query).toArray();
+        const stations = await collection.find(queryObj).limit(21).toArray();
   
         return stations;
       } finally {

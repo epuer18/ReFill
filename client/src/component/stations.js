@@ -11,28 +11,26 @@ export default function StationGallery({stations}) {
     */
   function renderStation(d, i) {
     return (
-      <div className="card" key={`stations_${i}`}>
+      <div className="card col-sm-12 col-md-3 mx-1 mb-4" key={`stations_${i}`}>
+      <h3 className="card-header">{d.name}</h3>
       <div className="card-body"> 
-      <div className="card-title">{d.name}</div>
         <div className="card-subtitle">{d.description}</div>
-        <ul>
-          <li>Access: {d.access_type}</li>
-          <li>Status:{d.status}</li>
-          <li>Location Zip Code: {d.zip_code}</li>
-       </ul>
+          <div><strong> Access: </strong>{d.access_type}</div>
+          <div><strong> Status: </strong>{d.status}</div>
+          <div><strong> Location Zip Code: </strong>{d.zip_code}</div>
         </div>
       </div>
     );
   }
 
   function renderStations() {
-    return <div>{stations.map(renderStation)}</div>;
+    return <div className="row justify-content-center">{stations.map(renderStation)}</div>;
   }
 
   console.log("Redering", stations);
   return (
-    <div className="StationGallery">
-        <div>{renderStations()}</div>
+    <div className>
+        {renderStations()}
     </div>
   );
 }
