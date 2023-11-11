@@ -1,11 +1,10 @@
 .StationGallery{
     margin: 0 auto;
-    max-width: 60em;
+    max-width: 70em;
     font-family: "Helvetica", "Arial", sans-serif;
     font-size: large;
     line-height: 2;
     padding: 4em 1em;
     color: #566b78;
     text-align: center;
-  
   }
