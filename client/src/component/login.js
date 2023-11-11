@@ -37,6 +37,11 @@ const Login = () => {
 
       const data = await response.json();
 
+      if (data.status === "error") {
+        // Handle HTTP errors
+        alert(data.error);
+      }
+
       if (data.status === "ok") {
         navigate("/");
         dispath(authActions.login());
