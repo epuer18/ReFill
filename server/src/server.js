@@ -8,6 +8,10 @@ import bodyParser from "body-parser";
 import logger from "morgan";
 import { fileURLToPath } from "url";
 
+import passport from "passport";
+import LocalStrategy from "passport-local";
+import session from "express-session";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 

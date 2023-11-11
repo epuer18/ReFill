@@ -42,8 +42,6 @@ userRouter.post("/register", async (req, res) => {
     }
   }
 
-  console.log("again");
-
   const password = await bcrypt.hash(plainTextPassword, 10);
 
   try {
