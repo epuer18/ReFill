@@ -53,8 +53,8 @@ const Header = () => {
               <Tab
                 //className={classes.font}
                 LinkComponent={Link}
-                to="/stations"
-                label="My stations"
+                to="/add"
+                label="Add stations"
               />
             </Tabs>
           </Box>
