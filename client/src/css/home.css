@@ -1,20 +1,27 @@
-.welcome_text{
-    margin: 0 auto;
-    max-width: 50em;
-    font-family: "Helvetica", "Arial", sans-serif;
-    font-size: large;
-    line-height: 2;
-    padding: 4em 1em;
-    color: #566b78;
-    text-align: center;
-  
-  }
-  
-  h2 {
-    margin-top: 1em;
-    padding-top: 1em;
-  }
-  
-  h1, h2, strong {
-    color: #333;
-  }
+.welcome_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: large;
+  line-height: 2;
+  padding: 4em 1em;
+  color: #566b78;
+  text-align: center;
+  background-image: url("../image/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 64px);
+}
+
+h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+h1,
+h2,
+strong {
+  color: #333;
+}
