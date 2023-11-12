@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { authActions } from "./store";
 import {
   AppBar,
@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+ 
 
 const Header = () => {
   const dispath = useDispatch();
@@ -28,15 +29,19 @@ const Header = () => {
       }}
     >
       <Toolbar>
+        <NavLink to="/" underline="none"> 
         <Typography
           variant="h4"
           style={{
             fontFamily: "Cursive",
             fontSize: "40px",
+            color:"white",
           }}
         >
           ReFill
         </Typography>
+        </NavLink>
+        
 
         {isLoggedIn && (
           <Box

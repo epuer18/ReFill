@@ -19,8 +19,10 @@ function stationDb() {
       access_type: station.access_type,
       status: station.status,
       zip_code: station.zip_code,
+      phot_url: "",
     });
     try {
+      console.log("so far so good")
       return res;
     } finally {
       await client.close();
