@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-import { authActions } from "../component/store";
 import { Box, Button, TextField, Typography } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 
 const AddStations = () => {
+  const navigate = useNavigate();
 
-//const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-const [inputs, setInputs] = useState({
-    name: "" ,
-    description:"",
+  const [inputs, setInputs] = useState({
+    stationName: "",
+    description: "",
     access_type: "",
     status: "",
     zip_code: "",
@@ -22,15 +21,15 @@ const [inputs, setInputs] = useState({
     }));
   };
 
-const sendStation = async () => {
+  const sendStation = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/create_station`, {
+      const response = await fetch(`http://localhost:3000/api/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: inputs.name,
+          name: inputs.stationName,
           description: inputs.description,
           access_type: inputs.access_type,
           status: inputs.status,
@@ -39,22 +38,21 @@ const sendStation = async () => {
         }),
       });
 
-      const data = await response.json(); 
+      const data = await response.json();
       if (data.status === "error") {
         alert(data.error);
         return;
       }
-      //if (data.status === "ok") {
-      //  navigate("/login");
-      //}
-      return data; 
+      if (data.status === "ok") {
+        navigate("/stations");
+      }
+      return data;
     } catch (err) {
       console.error("could not fetch", err);
     }
   };
 
-
-return (
+  return (
     <div>
       <form onSubmit={sendStation}>
         <Box
@@ -74,31 +72,31 @@ return (
           </Typography>
           <strong>Station Name</strong>
           <TextField
-            name="name"
+            name="stationName"
             onChange={handleChange}
-            value={inputs.name}
-            placeholder="Write a meaninful name"
+            value={inputs.stationName}
+            placeholder="Write a meaningful name"
             margin="dense"
           />
-        <strong>Station Description</strong>
+          <strong>Station Description</strong>
           <TextField
-            name="Description"
+            name="description"
             onChange={handleChange}
             value={inputs.description}
             placeholder="Add a small description about the station and how to find it!"
             margin="dense"
           />
-        <strong>Type of Access</strong>
-           <TextField
-            name="Type of Access"
+          <strong>Type of Access</strong>
+          <TextField
+            name="access_type"
             onChange={handleChange}
             value={inputs.access_type}
             placeholder="(Public, Inside Business/Campus/Park)"
             margin="dense"
           />
           <strong>Zip Code</strong>
-           <TextField
-            name="Zip Code"
+          <TextField
+            name="zip_code"
             onChange={handleChange}
             value={inputs.zip_code}
             placeholder="i.e. 94108"
@@ -116,6 +114,6 @@ return (
       </form>
     </div>
   );
-}
+};
 
 export default AddStations;
