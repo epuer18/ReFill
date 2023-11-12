@@ -26,6 +26,12 @@ router.post("/add", async (req, res) => {
     const stationData = req.body;
 
     // Validate stationData here if needed
+    if (stationData.zip_code.length !== 5) {
+      return res.json({
+        status: "error",
+        error: "Invalid zip code",
+      });
+    }
 
     const result = await stationDB.createStation(stationData);
 
