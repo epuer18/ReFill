@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
-import { authActions } from "../component/store";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 
 const AddStations = () => {
-  const navigate = useNavigate();
   const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
@@ -26,7 +23,7 @@ const AddStations = () => {
 
   const sendStation = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/add`, {
+      const response = await fetch(`./api/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +44,7 @@ const AddStations = () => {
         return;
       }
       if (data.status === "ok") {
-        navigate("/stations");
+        navigate("./stations");
       }
       return data;
     } catch (err) {
