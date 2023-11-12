@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { authActions } from "../component/store";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
 
 const AddStations = () => {
+const navigate = useNavigate();
+
 
 //const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 const [inputs, setInputs] = useState({
@@ -44,9 +47,9 @@ const sendStation = async () => {
         alert(data.error);
         return;
       }
-      //if (data.status === "ok") {
-      //  navigate("/login");
-      //}
+      if (data.status === "ok") {
+        navigate("api/stations");
+      }
       return data; 
     } catch (err) {
       console.error("could not fetch", err);
@@ -82,7 +85,7 @@ return (
           />
         <strong>Station Description</strong>
           <TextField
-            name="Description"
+            name="description"
             onChange={handleChange}
             value={inputs.description}
             placeholder="Add a small description about the station and how to find it!"
@@ -90,7 +93,7 @@ return (
           />
         <strong>Type of Access</strong>
            <TextField
-            name="Type of Access"
+            name="access_type"
             onChange={handleChange}
             value={inputs.access_type}
             placeholder="(Public, Inside Business/Campus/Park)"
@@ -98,7 +101,7 @@ return (
           />
           <strong>Zip Code</strong>
            <TextField
-            name="Zip Code"
+            name="zip_code"
             onChange={handleChange}
             value={inputs.zip_code}
             placeholder="i.e. 94108"
