@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { authActions } from "../component/store";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const AddStations = () => {
+  const navigate = useNavigate();
   const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
