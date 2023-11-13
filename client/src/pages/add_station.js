@@ -23,8 +23,8 @@ const AddStations = () => {
 
   const sendStation = async () => {
     try {
-      console.log("pre-post")
-      const response = await fetch(`./api/create`, {
+      console.log("pre-post");
+      const response = await fetch(`http://localhost:3000/api/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,10 +38,10 @@ const AddStations = () => {
           photo_url: "",
         }),
       });
-      console.log("post-post")
+      console.log("post-post");
 
       const data = await response.json();
-      navigate("./api/stations");
+      // navigate("./api/stations");
 
       if (data.status === "error") {
         alert(data.error);
@@ -49,7 +49,7 @@ const AddStations = () => {
       }
       if (data.status === "ok") {
         console.log("sup dude");
-        navigate("./api/stations");
+        navigate("/stations");
       }
       return data;
     } catch (err) {
