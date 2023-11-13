@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
@@ -23,7 +23,8 @@ const AddStations = () => {
 
   const sendStation = async () => {
     try {
-      const response = await fetch(`./api/add`, {
+      console.log("pre-post")
+      const response = await fetch(`./api/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,14 +38,18 @@ const AddStations = () => {
           photo_url: "",
         }),
       });
+      console.log("post-post")
 
       const data = await response.json();
+      navigate("./api/stations");
+
       if (data.status === "error") {
         alert(data.error);
         return;
       }
       if (data.status === "ok") {
-        navigate("./stations");
+        console.log("sup dude");
+        navigate("./api/stations");
       }
       return data;
     } catch (err) {
