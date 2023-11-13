@@ -5,7 +5,7 @@ import stationDB from "../controller/stationController.js";
 const router = express.Router();
 
 router.get("/add", async (req, res) => {
-  res.redirect("/stations");
+  res.redirect("/");
 });
 
 router.get("/stations_data", async (req, res) => {
