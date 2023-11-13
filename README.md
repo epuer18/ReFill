@@ -1,6 +1,6 @@
 # ReFill
 
- ReFill is an example application that provides a synthetic list of water bottle filling stations in a variety of locations This is useful to provide better knowledge about accessible water for those traveling in new areas, or looking to stay hydrated.
+ReFill is an example application that provides a synthetic list of water bottle filling stations in a variety of locations This is useful to provide better knowledge about accessible water for those traveling in new areas, or looking to stay hydrated.
 
 ## Overview
 
@@ -8,11 +8,11 @@
 
 ## Relevant Project Links:
 
-- **Deployed page**: 
+- **Deployed page**:
 
-- **Walkthrough Video**: 
+- **Walkthrough Video**:
 
-- **Slides**:
+- **Slides**: https://docs.google.com/presentation/d/1Z337eg8nEhDx2ntlPndL_2rEs5UzT69E3cF-BJkMfSY/edit#slide=id.p1
 
 - **Design Document**: [Click to view the design document PDF](designDoc/CS5610_Project3.pdf)
 
@@ -90,5 +90,6 @@ Below we show some screenshots of the site's main pages, and a brief description
 
 ## Other
 
-AI prompts and responses used for this project are stored in the following document: 
-+ [prompts.md](prompts.md)
+AI prompts and responses used for this project are stored in the following document:
+
+- [prompts.md](prompts.md)
