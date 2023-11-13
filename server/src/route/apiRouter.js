@@ -6,7 +6,7 @@ import { async } from "abc";
 const router = express.Router();
 
 router.get("/add", async (req, res) => {
-  res.redirect("/stations");
+  res.redirect("/");
 });
 
 router.get("/stations_data", async (req, res) => {
