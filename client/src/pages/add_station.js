@@ -57,9 +57,16 @@ const AddStations = () => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendStation().then((data) =>
+      localStorage.setItem("stationId", data.stationId)
+    );
+  };
+
   return (
     <div>
-      <form onSubmit={sendStation}>
+      <form onSubmit={handleSubmit}>
         <Box
           maxWidth="40em"
           display="flex"
