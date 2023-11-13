@@ -22,7 +22,7 @@ function stationDb() {
       phot_url: "",
     });
     try {
-      console.log("so far so good")
+      console.log("so far so good");
       return res;
     } finally {
       await client.close();
@@ -52,6 +52,19 @@ function stationDb() {
     try {
       const station = await collection.findOne({ _id: stationId });
       return station;
+    } catch (error) {
+      throw error; // Or handle the error as needed
+    } finally {
+      await client.close();
+    }
+  };
+
+  me.deleteStation = async (stationId) => {
+    const { client, collection } = await connectDB("stations");
+
+    try {
+      const result = await collection.deleteOne({ _id: ObjectId(stationId) });
+      return result;
     } catch (error) {
       throw error; // Or handle the error as needed
     } finally {

@@ -53,4 +53,19 @@ router.post("/create", async (req, res) => {
   }
 });
 
+router.delete("/stations/:id", async (req, res) => {
+  try {
+    const stationId = req.params.id;
+    const result = await stationDB.deleteStation(stationId);
+
+    if (result.deletedCount === 0) {
+      return res.send({ status: "error", error: "Station not found" });
+    }
+
+    res.send({ status: "ok", message: "Station deleted successfully" });
+  } catch (error) {
+    res.send({ status: "error", error: "Error deleting station" });
+  }
+});
+
 export default router;
