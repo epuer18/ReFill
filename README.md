@@ -28,7 +28,7 @@ ReFill is an example application that provides a synthetic list of water bottle 
 git clone https://github.com/epuer18/ReFill
 ```
 
-- First we need to build the front end by running the following and insta
+- First we need to build the front end by running the following and install
 
 ```
 cd client
@@ -37,12 +37,40 @@ cd client
 
 ```
 npm install
+
 ```
 
-- add a .env file to the directory and make a `MONGO_URL` variable with the `uri` to connect to the right MongoDB Atlas database.
+```
+npm start
+
+```
+
+- Then we can go to the server install the dependencies and run the application
+
+```
+cd ..
+
+```
+
+```
+cd server
+
+```
+
+```
+npm install
+```
+
+```
+npm start
+```
+
+- To start the app, you need to navigate to each client & server folder run "npm start".
+
+- add a .env file to the directory and make a `MONGO_URL` variable with the `url` to connect to the right MongoDB Atlas database.
 
   - This site was developed with a database in MongoDB Atlas, to use the same database contact the authors with your IP number so that it can be added onto the permissions. Similarly, to prevent others from overusing these resources, we share a private key at our discression.
-  - Otherwise you can create your own MongoDB Atlas project with a database named `HousekeepingApp` and two collections: `users` and `services`.
+  - Otherwise you can create your own MongoDB Atlas project with a database named `Refill` and two collections: `users` and `stations`.
 
 ```
 MONGO_URL = "mongodb+srv://<username>:<password><info_database_cluster>"
@@ -59,6 +87,7 @@ npm start
 - JavaScript (ES6)
 - HTML
 - CSS
+- React
 
 - MongoDB
 - Node.js

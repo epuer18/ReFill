@@ -30,8 +30,8 @@ app.use("/auth", userRouter);
 app.use("/api", apiRouter);
 
 app.get("/add", async (req, res) => {
-    res.redirect("/api/add");
-  });
+  res.redirect("/api/add");
+});
 
-app.listen(3000, () => console.log("app started at 3000..."));
+app.listen(80, () => console.log("app started at 80..."));
 export default app;

@@ -1,7 +1,6 @@
 import express, { json } from "express";
 import data from "../db/station_examples.json" assert { type: "json" };
 import stationDB from "../controller/stationController.js";
-
 const router = express.Router();
 
 router.get("/add", async (req, res) => {

@@ -38,7 +38,7 @@ function stationDb() {
     }
 
     try {
-      const stations = await collection.find(queryObj).limit(21).toArray();
+      const stations = await collection.find(queryObj).toArray();
 
       return stations;
     } finally {
@@ -63,7 +63,9 @@ function stationDb() {
     const { client, collection } = await connectDB("stations");
 
     try {
-      const result = await collection.deleteOne({ _id: ObjectId(stationId) });
+      const result = await collection.deleteOne({
+        _id: new ObjectId(stationId),
+      });
       return result;
     } catch (error) {
       throw error; // Or handle the error as needed

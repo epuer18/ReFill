@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-
-export default function StationGallery({ stations }) {
-  const navigate = useNavigate();
+import { useCallback, useRef } from "react";
+export default function StationGallery({ stations, afterDeletion }) {
   /* Expect data to be
     "name": 
     "description":
@@ -14,65 +12,64 @@ export default function StationGallery({ stations }) {
     "photo_url": 
     */
 
-  const deleteRequest = async (id) => {
-    try {
-      const response = await fetch(`http://localhost:3000/api/stations/${id}`, {
-        method: "DELETE",
-      });
+  const deleteRequest = useCallback(
+    async (id) => {
+      try {
+        const response = await fetch(`http://localhost:80/api/stations/${id}`, {
+          method: "DELETE",
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        afterDeletion();
+        return data;
+      } catch (err) {
+        console.error("Error:", err);
       }
+    },
+    [afterDeletion]
+  );
 
-      const data = await response.json();
-
-      return data;
-    } catch (err) {
-      console.error("Error:", err);
-    }
-  };
-  const handleDelete = (id) => {
-    deleteRequest(id).then(() => navigate("/stations"));
-  };
-
-  function renderStation(d, i) {
+  const renderStation = useRef((station, index) => {
     return (
-      <div className="card col-sm-12 col-md-3 mx-1 mb-4" key={`stations_${i}`}>
+      <div
+        className="card col-sm-12 col-md-3 mx-1 mb-4"
+        key={`stations_${index}`}
+      >
         <h3 className="card-header">
-          {d.name}
-          <IconButton onClick={handleDelete(i)}>
+          {station.name}
+          <IconButton onClick={deleteRequest.bind(this, station._id)}>
             <DeleteForeverIcon color="error" />
           </IconButton>
         </h3>
         <div className="card-body">
-          <div className="card-subtitle">{d.description}</div>
+          <div className="card-subtitle">{station.description}</div>
           <div>
             <strong> Access: </strong>
-            {d.access_type}
+            {station.access_type}
           </div>
           <div>
             <strong> Status: </strong>
-            {d.status}
+            {station.status}
           </div>
           <div>
             <strong> Location Zip Code: </strong>
-            {d.zip_code}
+            {station.zip_code}
           </div>
         </div>
       </div>
     );
-  }
+  });
 
-  function renderStations() {
-    return (
+  return (
+    <div className>
       <div className="row justify-content-center">
-        {stations.map(renderStation)}
+        {stations.map(renderStation.current)}
       </div>
-    );
-  }
-
-  console.log("Redering", stations);
-  return <div className>{renderStations()}</div>;
+    </div>
+  );
 }
 
 StationGallery.propTypes = {
