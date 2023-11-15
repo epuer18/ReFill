@@ -6,9 +6,10 @@
   "author": "Eduardo Puerta",
   "license": "MIT",
   "scripts": {
+    "dep": "cd server && npm install && cd ../client && npm install",
     "server": "cd server && npm start",
     "client": "cd client && npm run dev",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "npm run dep && concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "connect-history-api-fallback": "^2.0.0",
