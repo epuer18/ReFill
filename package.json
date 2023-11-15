@@ -6,9 +6,8 @@
   "author": "Eduardo Puerta",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "backend": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
-    "frontend": "cd client && npm start"
+    "start": "cd client && npm run start",
+    "start:server": "cd server && npm run start"
   },
   "dependencies": {
     "connect-history-api-fallback": "^2.0.0",

@@ -10,7 +10,7 @@ ReFill is an example application that provides a synthetic list of water bottle 
 
 - **Deployed page**: https://refill-0gz1.onrender.com
 
-- **Walkthrough Video**:
+- **Walkthrough Video**: https://youtu.be/6mLapV--YWo
 
 - **Slides**: https://docs.google.com/presentation/d/1Z337eg8nEhDx2ntlPndL_2rEs5UzT69E3cF-BJkMfSY/edit#slide=id.p1
 

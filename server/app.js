@@ -29,5 +29,5 @@ app.get("/add", async (req, res) => {
   res.redirect("/api/add");
 });
 
-// app.listen(80, () => console.log("app started at 80..."));
+app.listen(80, () => console.log("app started at 80..."));
 export default app;
