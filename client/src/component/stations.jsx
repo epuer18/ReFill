@@ -15,9 +15,12 @@ export default function StationGallery({ stations, afterDeletion }) {
   const deleteRequest = useCallback(
     async (id) => {
       try {
-        const response = await fetch(`http://localhost:80/api/stations/${id}`, {
-          method: "DELETE",
-        });
+        const response = await fetch(
+          `http://localhost:3000/api/stations/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -83,4 +86,5 @@ StationGallery.propTypes = {
       photo_url: PropTypes.string.isRequired,
     })
   ).isRequired,
+  afterDeletion: PropTypes.func.isRequired,
 };

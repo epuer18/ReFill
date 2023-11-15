@@ -1,7 +1,7 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { authActions } from "./store";
+import { authActions } from "./store.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -20,7 +20,7 @@ const Login = () => {
   };
   const sendRequest = async (type = "login") => {
     try {
-      const response = await fetch(`http://localhost:80/auth/${type}`, {
+      const response = await fetch(`http://localhost:3000/auth/${type}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +111,7 @@ const Login = () => {
             onClick={handleNavigation}
             sx={{ borderRadius: 3, marginTop: 3 }}
           >
-            Don't have an account? Register
+            No account? Register
           </Button>
         </Box>
       </form>

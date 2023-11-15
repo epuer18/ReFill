@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import StationGallery from "../component/stations.js";
-import SearchBar from "../component/searchBar.js";
+import StationGallery from "../component/stations.jsx";
+import SearchBar from "../component/searchBar.jsx";
 import "../css/StationGallery.css";
 
 const Stations = () => {
@@ -8,7 +8,7 @@ const Stations = () => {
   const [query, setQuery] = useState("");
   const fetchStations = useCallback(async () => {
     const res = await fetch(
-      `http://localhost:80/api/stations_data?query=${query}`
+      `http://localhost:3000/api/stations_data?query=${query}`
     );
     if (!res.ok) {
       console.log("Error fetching", res);

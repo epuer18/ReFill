@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { authActions } from "./store";
+import { authActions } from "./store.jsx";
 import {
   AppBar,
   Typography,
@@ -12,11 +12,9 @@ import {
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
- 
 
 const Header = () => {
-  const dispath = useDispatch();
-
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const [value, setValue] = useState();
 
@@ -29,19 +27,18 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        <NavLink to="/" underline="none"> 
-        <Typography
-          variant="h4"
-          style={{
-            fontFamily: "Cursive",
-            fontSize: "40px",
-            color:"white",
-          }}
-        >
-          ReFill
-        </Typography>
+        <NavLink to="/" underline="none">
+          <Typography
+            variant="h4"
+            style={{
+              fontFamily: "Cursive",
+              fontSize: "40px",
+              color: "white",
+            }}
+          >
+            ReFill
+          </Typography>
         </NavLink>
-        
 
         {isLoggedIn && (
           <Box
@@ -97,7 +94,7 @@ const Header = () => {
 
           {isLoggedIn && (
             <Button
-              onClick={() => dispath(authActions.logout())}
+              onClick={() => dispatch(authActions.logout())}
               LinkComponent={Link}
               to="/"
               variant="contained"

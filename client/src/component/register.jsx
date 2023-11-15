@@ -1,5 +1,5 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -18,7 +18,7 @@ const Register = () => {
 
   const sendRequest = async (type = "register") => {
     try {
-      const response = await fetch(`http://localhost:80/auth/${type}`, {
+      const response = await fetch(`http://localhost:3000/auth/${type}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
