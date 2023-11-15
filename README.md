@@ -40,7 +40,13 @@ npm run build
 cd ..
 cd server
 npm install
+```
+
+- To run the app, go back to the project folder, run:
+
+```
 npm start
+
 ```
 
 - make sure to add a .env file to the directory and make a `MONGO_URL` variable with the `uri` to connect to the right MongoDB Atlas database.

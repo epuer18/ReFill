@@ -6,7 +6,9 @@
   "author": "Eduardo Puerta",
   "license": "MIT",
   "scripts": {
-    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www"
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
+    "frontend": "cd client && npm start"
   },
   "dependencies": {
     "connect-history-api-fallback": "^2.0.0",
@@ -18,6 +20,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",

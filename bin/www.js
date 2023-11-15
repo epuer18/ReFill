@@ -27,7 +27,7 @@ let server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () => console.log("app started at 80..."));
 server.on("error", onError);
 server.on("listening", onListening);
 
