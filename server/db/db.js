@@ -4,7 +4,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const connectDB = async (collectionChosen) => {
-  const client = new MongoClient(process.env.MONGO_URL);
+  const client = new MongoClient(
+    process.env.MONGO_URL || "mongodb://localhost:27017"
+  );
   await client.connect();
 
   //await client.connect();
@@ -14,5 +16,3 @@ const connectDB = async (collectionChosen) => {
 };
 
 export default connectDB;
-
-// Try if else for two database!!!
