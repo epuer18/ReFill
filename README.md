@@ -26,26 +26,18 @@ ReFill is an example application that provides a synthetic list of water bottle 
 git clone https://github.com/epuer18/ReFill
 ```
 
-- First we need to build the front end by running the following and install
+- First we need to install and build at the project folder
 
 ```
-cd client
 npm install
+
 npm run build
 ```
 
-- Then we can go to the server install the dependencies and run the application
+- To run the app, go the project folder, run:
 
 ```
-cd ..
-cd server
-npm install
-```
-
-- To run the app, go back to the project folder, run:
-
-```
-npm start
+npm run start
 
 ```
 
