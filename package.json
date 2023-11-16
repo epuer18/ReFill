@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "client": "vite ./client -c ./vite.config.js",
-    "build": "cd client && npx vite build",
+    "build": "vite build",
     "start": "npm run build && node ./server/app.js"
   },
   "dependencies": {
