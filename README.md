@@ -4,7 +4,7 @@ ReFill is an example application that provides a synthetic list of water bottle 
 
 ## Overview
 
-- **Authors**: Wenxin Qi and [Eduardo Puerta](epuer18.github.io/personalWebPage)
+- **Authors**: [Wenxin Qi](https://wenxinq7.github.io/) and [Eduardo Puerta](epuer18.github.io/personalWebPage)
 
 ## Relevant Project Links:
 
