@@ -8,9 +8,7 @@
   "scripts": {
     "client": "vite ./client -c ./vite.config.js",
     "build": "vite build",
-    "start": "node ./server/app.js",
-    "initStation": "mongoimport -d Refill -c stations --jsonArray server/db/station_examples.json",
-    "initUser": "mongoimport -d Refill -c users --jsonArray server/db/user_records.json"
+    "start": "node ./server/app.js"
   },
   "engines": {
     "node": ">=18.18.0"
@@ -31,7 +29,6 @@
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.2.0",
-    "mongoimport": "^1.0.6",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
     "passport": "^0.6.0",
