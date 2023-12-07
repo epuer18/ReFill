@@ -20,7 +20,7 @@ const Login = () => {
   };
   const sendRequest = async (type = "login") => {
     try {
-      const response = await fetch(`http://localhost:3000/auth/${type}`, {
+      const response = await fetch(`./auth/${type}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -7,9 +7,7 @@ const Stations = () => {
   let [stations, setStations] = useState([]);
   const [query, setQuery] = useState("");
   const fetchStations = useCallback(async () => {
-    const res = await fetch(
-      `http://localhost:3000/api/stations_data?query=${query}`
-    );
+    const res = await fetch(`./api/stations_data?query=${query}`);
     if (!res.ok) {
       console.log("Error fetching", res);
       setStations([]);

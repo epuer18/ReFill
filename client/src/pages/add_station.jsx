@@ -24,7 +24,7 @@ const AddStations = () => {
   const sendStation = async () => {
     try {
       console.log("pre-post");
-      const response = await fetch(`http://localhost:3000/api/create`, {
+      const response = await fetch(`./api/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

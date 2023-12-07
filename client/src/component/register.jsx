@@ -18,7 +18,7 @@ const Register = () => {
 
   const sendRequest = async (type = "register") => {
     try {
-      const response = await fetch(`http://localhost:3000/auth/${type}`, {
+      const response = await fetch(`./auth/${type}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
