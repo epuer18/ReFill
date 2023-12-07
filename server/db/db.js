@@ -4,9 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const connectDB = async (collectionChosen) => {
-  const client = new MongoClient(
-    process.env.MONGO_URL || "mongodb://localhost:27017"
-  );
+  const client = new MongoClient(process.env.MONGO_URL);
   await client.connect();
 
   //await client.connect();
