@@ -8,10 +8,10 @@
   "scripts": {
     "client": "vite ./client -c ./vite.config.js",
     "build": "vite build",
-    "start": "node ./server/app.js"
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./server/app.js"
   },
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=18.18.0 <19.0.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
