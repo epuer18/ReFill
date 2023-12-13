@@ -25,6 +25,10 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use("/", userRouter);
 app.use("/", apiRouter);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
+
 // app.get("/add", async (req, res) => {
 //   res.redirect("/api/add");
 // });

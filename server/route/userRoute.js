@@ -6,12 +6,12 @@ import jwt from "jsonwebtoken";
 const userRouter = express.Router();
 const JWT_SECRET = "sdjkfh8923yhjdksbfma@";
 
-userRouter.get("/auth/login", (req, res) => {
-  res.redirect("/");
-});
-userRouter.get("/auth/register", (req, res) => {
-  res.redirect("/");
-});
+// userRouter.get("/login", (req, res) => {
+//   res.redirect("/login");
+// });
+// userRouter.get("/register", (req, res) => {
+//   res.redirect("/register");
+// });
 
 userRouter.post("/auth/register", async (req, res) => {
   const { username, password: plainTextPassword } = req.body;
