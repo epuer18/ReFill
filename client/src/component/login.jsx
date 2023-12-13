@@ -109,21 +109,14 @@ const Login = () => {
           <Button
             type="submit"
             variant="contained"
-            sx={{
-              borderRadius: 3,
-              marginTop: 3,
-              backgroundColor: "#227187", // Custom background color
-              color: "white", // Custom text color
-              "&:hover": {
-                backgroundColor: "#9d71b1", // Custom hover color
-              },
-            }}
+            sx={{ borderRadius: 3, marginTop: 3 }}
+            color="warning"
           >
             Login
           </Button>
           <Button
             onClick={handleNavigation}
-            sx={{ borderRadius: 3, marginTop: 3 }}
+            sx={{ borderRadius: 3, marginTop: 3, fontFamily: "Roboto" }}
           >
             No account? Register
           </Button>

@@ -1,6 +1,7 @@
 // import React from "react";
 import { Link } from "react-router-dom";
 import "../css/home.css";
+import "../css/index.css";
 
 const Home = () => {
   return (
@@ -15,13 +16,13 @@ const Home = () => {
           stations, or log in to add your own!
         </h2>
         <div>
-          <Link to="/stations" className="btn btn-primary mb-4">
+          <Link to="/stations" className="btn btn-primary mb-4 sans">
             Begin Exploring
           </Link>
         </div>
         <div>
-          <Link to="/add" className="btn btn-primary mb-4">
-            Log a Station
+          <Link to="/add" className="btn btn-primary mb-4 sans">
+            Add a Station
           </Link>
         </div>
       </section>

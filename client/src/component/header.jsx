@@ -30,7 +30,7 @@ const Header = () => {
           <Typography
             variant="h4"
             style={{
-              fontFamily: "Cursive",
+              fontFamily: "Oleo Script",
               fontSize: "40px",
               color: "white",
             }}
@@ -72,6 +72,7 @@ const Header = () => {
                   fontWeight: "bold",
                   color: "white",
                   borderRadius: 10,
+                  fontFamily:"Oleo Script",
                 }}
               >
                 Login
@@ -84,6 +85,7 @@ const Header = () => {
                   fontWeight: "bold",
                   color: "white",
                   borderRadius: 10,
+                  fontFamily:"Oleo Script",
                 }}
               >
                 SignUp
@@ -97,7 +99,7 @@ const Header = () => {
               LinkComponent={Link}
               to="/"
               variant="contained"
-              sx={{ margin: 1, borderRadius: 10 }}
+              sx={{ margin: 1, borderRadius: 10 , fontFamily:"Oleo Script"}}
               color="warning"
             >
               Logout

@@ -89,6 +89,7 @@ const Register = () => {
             onChange={handleChange}
             value={inputs.username}
             placeholder="UserName"
+            fontFamily="Roboto"
             margin="normal"
           />
           <TextField
@@ -97,6 +98,7 @@ const Register = () => {
             value={inputs.password}
             type={"password"}
             placeholder="Password"
+            fontFamily="Roboto"
             margin="normal"
           />
           <Button
@@ -116,7 +118,7 @@ const Register = () => {
           </Button>
           <Button
             onClick={handleNavigation}
-            sx={{ borderRadius: 3, marginTop: 3 }}
+            sx={{ borderRadius: 3, marginTop: 3, fontFamily: "Roboto" }}
           >
             Already have an account? Login
           </Button>
