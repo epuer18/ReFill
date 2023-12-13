@@ -81,7 +81,14 @@ const Login = () => {
           marginTop={5}
           borderRadius={5}
         >
-          <Typography variant="h2" padding={3} textAlign="center">
+          <Typography
+            variant="h2"
+            padding={3}
+            textAlign="center"
+            sx={{
+              color: "#227187",
+            }}
+          >
             Login
           </Typography>
           <TextField
@@ -102,8 +109,15 @@ const Login = () => {
           <Button
             type="submit"
             variant="contained"
-            sx={{ borderRadius: 3, marginTop: 3 }}
-            color="warning"
+            sx={{
+              borderRadius: 3,
+              marginTop: 3,
+              backgroundColor: "#227187", // Custom background color
+              color: "white", // Custom text color
+              "&:hover": {
+                backgroundColor: "#9d71b1", // Custom hover color
+              },
+            }}
           >
             Login
           </Button>

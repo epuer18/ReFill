@@ -31,7 +31,7 @@
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  color: #333;
+  color: #227187;
 }
 
 .login-input {
@@ -53,13 +53,13 @@
 }
 
 .login-button {
-  background-color: #ffa726;
+  background-color: #227187;
   color: white;
   border: none;
 }
 
 .login-button:hover {
-  background-color: #fb8c00;
+  background-color: #9d71b1;
 }
 
 .register-button {

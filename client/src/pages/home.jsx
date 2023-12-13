@@ -4,16 +4,16 @@ import "../css/home.css";
 
 const Home = () => {
   return (
-    <div className="welcome_text">
-      <h1>
-        {" "}
-        <strong>Welcome to ReFill: The Hydration Application</strong>{" "}
-      </h1>
-      <div className="mb-5">
-        Our goal is to connect you with accessible water bottle filling
-        stations, or log in to add your own!
-      </div>
+    <main className="homePage">
       <section>
+        <h1>
+          {" "}
+          <strong>Welcome to ReFill: The Hydration Application</strong>{" "}
+        </h1>
+        <h2>
+          Our goal is to connect you with accessible water bottle filling
+          stations, or log in to add your own!
+        </h2>
         <div>
           <Link to="/stations" className="btn btn-primary mb-4">
             Begin Exploring
@@ -25,7 +25,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 
