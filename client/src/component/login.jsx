@@ -81,7 +81,7 @@ const Login = () => {
           marginTop={5}
           borderRadius={5}
         >
-          <Typography variant="h2" padding={3} textAlign="center">
+          <Typography variant="h2" padding={3} textAlign="center" fontFamily="Oleo Script">
             Login
           </Typography>
           <TextField
@@ -102,14 +102,14 @@ const Login = () => {
           <Button
             type="submit"
             variant="contained"
-            sx={{ borderRadius: 3, marginTop: 3 }}
+            sx={{ borderRadius: 3, marginTop: 3, fontFamily:"Roboto" }}
             color="warning"
           >
             Login
           </Button>
           <Button
             onClick={handleNavigation}
-            sx={{ borderRadius: 3, marginTop: 3 }}
+            sx={{ borderRadius: 3, marginTop: 3, fontFamily:"Roboto" }}
           >
             No account? Register
           </Button>

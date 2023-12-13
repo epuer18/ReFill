@@ -74,7 +74,7 @@ const Register = () => {
           marginTop={5}
           borderRadius={5}
         >
-          <Typography variant="h2" padding={3} textAlign="center">
+          <Typography variant="h2" padding={3} textAlign="center" fontFamily="Oleo Script">
             Register
           </Typography>
           <TextField
@@ -82,6 +82,7 @@ const Register = () => {
             onChange={handleChange}
             value={inputs.username}
             placeholder="UserName"
+            fontFamily="Roboto"
             margin="normal"
           />
           <TextField
@@ -90,19 +91,22 @@ const Register = () => {
             value={inputs.password}
             type={"password"}
             placeholder="Password"
+            fontFamily="Roboto"
             margin="normal"
           />
           <Button
             type="submit"
             variant="contained"
-            sx={{ borderRadius: 3, marginTop: 3 }}
+            sx={{ borderRadius: 3, marginTop: 3, fontFamily:"Roboto"
+          }}
             color="warning"
           >
             Submit
           </Button>
           <Button
             onClick={handleNavigation}
-            sx={{ borderRadius: 3, marginTop: 3 }}
+            sx={{ borderRadius: 3, marginTop: 3 , fontFamily:"Roboto"
+          }}
           >
             Already have an account? Login
           </Button>

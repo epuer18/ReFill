@@ -79,7 +79,7 @@ const AddStations = () => {
           marginTop={5}
           borderRadius={5}
         >
-          <Typography variant="h3" padding={3} textAlign="center">
+          <Typography variant="h3" padding={3} textAlign="center" fontFamily={"Oleo Script"}>
             Add A Station!
           </Typography>
           <strong>Station Name</strong>
@@ -104,6 +104,14 @@ const AddStations = () => {
             onChange={handleChange}
             value={inputs.access_type}
             placeholder="(Public, Inside Business/Campus/Park)"
+            margin="dense"
+          />
+           <strong>Status</strong>
+          <TextField
+            name="status"
+            onChange={handleChange}
+            value={inputs.access_type}
+            placeholder="(clean, down for the winter)"
             margin="dense"
           />
           <strong>Zip Code</strong>
