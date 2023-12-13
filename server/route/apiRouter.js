@@ -3,11 +3,11 @@ import data from "../db/station_examples.json" assert { type: "json" };
 import stationDB from "../controller/stationController.js";
 const router = express.Router();
 
-router.get("/add", async (req, res) => {
+router.get("/api/add", async (req, res) => {
   res.redirect("/");
 });
 
-router.get("/stations_data", async (req, res) => {
+router.get("/api/stations_data", async (req, res) => {
   const query = req.query.query || "";
   try {
     const stations = await stationDB.getStations(query);
@@ -19,12 +19,12 @@ router.get("/stations_data", async (req, res) => {
   }
 });
 
-router.get("/load_fake_data", async (req, res) => {
+router.get("/api/load_fake_data", async (req, res) => {
   data.map(stationDB.createStation);
 });
 
 // POST route for adding a new station
-router.post("/create", async (req, res) => {
+router.post("/api/create", async (req, res) => {
   try {
     const stationData = req.body;
 
@@ -52,7 +52,7 @@ router.post("/create", async (req, res) => {
   }
 });
 
-router.delete("/stations/:id", async (req, res) => {
+router.delete("/api/stations/:id", async (req, res) => {
   try {
     const stationId = req.params.id;
     const result = await stationDB.deleteStation(stationId);

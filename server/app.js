@@ -22,12 +22,12 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.use("/auth", userRouter);
-app.use("/api", apiRouter);
+app.use("/", userRouter);
+app.use("/", apiRouter);
 
-app.get("/add", async (req, res) => {
-  res.redirect("/api/add");
-});
+// app.get("/add", async (req, res) => {
+//   res.redirect("/api/add");
+// });
 
 app.listen(3000, () => console.log("app started at 3000..."));
 export default app;

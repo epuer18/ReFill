@@ -15,7 +15,7 @@ export default function StationGallery({ stations, afterDeletion }) {
   const deleteRequest = useCallback(
     async (id) => {
       try {
-        const response = await fetch(`./api/stations/${id}`, {
+        const response = await fetch(`/api/stations/${id}`, {
           method: "DELETE",
         });
         if (!response.ok) {

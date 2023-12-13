@@ -18,9 +18,9 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
-  const sendRequest = async (type = "login") => {
+  const sendRequest = async () => {
     try {
-      const response = await fetch(`./auth/${type}`, {
+      const response = await fetch("/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
