@@ -38,7 +38,7 @@ function stationDb() {
     }
 
     try {
-      const stations = await collection.find(queryObj).toArray();
+      const stations = await collection.find(queryObj).sort([['_id', -1]]).toArray();
 
       return stations;
     } finally {
