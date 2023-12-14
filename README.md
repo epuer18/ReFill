@@ -10,9 +10,14 @@ ReFill is an example application that provides a synthetic list of water bottle 
 
 - **Deployed page**: https://refill-0gz1.onrender.com
 
-- **Walkthrough Video**: https://youtu.be/6mLapV--YWo
+- **Usability Report**: [Click to view the usability report PDF](designDocs/report-template-usability-test_0.pdf)
 
-- **Slides**: https://docs.google.com/presentation/d/1Z337eg8nEhDx2ntlPndL_2rEs5UzT69E3cF-BJkMfSY/edit#slide=id.p1
+- **Informed Consent Form**: [Click to view a copy of the Informed Consent form PDF](designDocs/ReFill-Signed-Informed-Consent.docx.pdf)
+
+
+- **Walkthrough Video**: 
+
+- **Slides**: https://docs.google.com/presentation/d/1M19QANyeNJpeUwWvkLbslmQ6AXJlAH922HhH4Ki4qFY/edit?usp=sharing
 
 - **Design Document**: [Click to view the design document PDF](designDoc/CS5610_Project3.pdf)
 
