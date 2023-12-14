@@ -74,7 +74,7 @@ Below we show some screenshots of the site's main pages, and a brief description
 
 1. First we start on a landing page that asks us to sign up. Since this project aims to demonstrate the use of MongoDB and node express to build a backend we ask that you **DO NOT** use real credentials for this step.
 
-![Screenshot of Landing page](/new_screenshot/homePage.png)
+![Screenshot of Landing page](/new_screenshot/homePage.jpg)
 
 2. Log in or sign up page.
 
