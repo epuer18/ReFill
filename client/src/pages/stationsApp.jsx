@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import StationGallery from "../component/stations.jsx";
 import SearchBar from "../component/searchBar.jsx";
+import { Link } from "react-router-dom";
 import "../css/StationGallery.css";
 
 const Stations = () => {
@@ -28,8 +29,11 @@ const Stations = () => {
 
   return (
     <div className="StationGallery">
-      <div className="mb-5">
+      <div className="header-section">
         <h1>Water Bottle Filling Stations</h1>
+        <Link to="/add" className="add-button">
+          Log new Station
+        </Link>
       </div>
       <SearchBar query={query} setQuery={setQuery}></SearchBar>
       <div className="mb-5"></div>

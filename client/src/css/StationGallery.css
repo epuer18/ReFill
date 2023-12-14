@@ -1,10 +1,30 @@
-.StationGallery{
-    margin: 0 auto;
-    max-width: 70em;
-    font-family: "Helvetica", "Arial", sans-serif;
-    font-size: large;
-    line-height: 2;
-    padding: 4em 1em;
-    color: #566b78;
-    text-align: center;
-  }
+.StationGallery {
+  margin: 0 auto;
+  max-width: 70em;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: large;
+  line-height: 2;
+  padding: 4em 1em;
+  color: #566b78;
+  text-align: center;
+}
+
+.header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.add-button {
+  padding: 10px 15px;
+  background-color: #227187;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #1e5d70;
+}
