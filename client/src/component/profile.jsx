@@ -1,20 +1,54 @@
-// import React from "react";
-import "../css/home.css";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import "../css/index.css";
+import "../css/profile.css";
+import defaultProfilePic from "../image/default.jpeg";
 
 const Profile = () => {
+  const [livingArea, setLivingArea] = useState(
+    "Please describe your living area"
+  );
+  const [isEditing, setIsEditing] = useState(false);
+  const [editLivingArea, setEditLivingArea] = useState(livingArea);
+
+  const { user } = useSelector((state) => state.auth);
+
+  const changeProfile = () => {
+    if (isEditing) {
+      setLivingArea(editLivingArea); // Save the new living area
+    }
+    setIsEditing(!isEditing); // Toggle editing mode
+  };
+
+  const handleLivingAreaChange = (e) => {
+    setEditLivingArea(e.target.value);
+  };
+
   return (
-    <main className="homePage">
-      <section>
-        <h1>
-          {" "}
-          <strong>Welcome to ReFill: The Hydration Application</strong>{" "}
-        </h1>
-        <h2>
-          Our goal is to connect you with accessible water bottle filling
-          stations, or log in to add your own!
-        </h2>
-      </section>
+    <main className="profile">
+      <div className="profile-content">
+        <img
+          src={defaultProfilePic}
+          alt="profile picture"
+          className="profile-pic"
+        />
+        <h1 className="username">{user.username}</h1>
+
+        {isEditing ? (
+          <input
+            type="text"
+            value={editLivingArea}
+            onChange={handleLivingAreaChange}
+            className="living-area-input"
+          />
+        ) : (
+          <p className="living-area">{livingArea}</p>
+        )}
+
+        <button onClick={changeProfile}>
+          {isEditing ? "Save Changes" : "Change Profile"}
+        </button>
+      </div>
     </main>
   );
 };

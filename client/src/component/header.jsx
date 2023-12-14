@@ -31,30 +31,6 @@ const Header = () => {
           </Typography>
         </NavLink>
 
-        {isLoggedIn && user && (
-          <Box
-            display="flex"
-            justifyContent="flex-start"
-            marginLeft="auto"
-            marginRight="auto"
-          >
-            {/* <Tabs
-              textColor="inherit"
-              value={value}
-              onChange={(e, val) => setValue(val)}
-            > */}
-            {/* </Tabs> */}
-
-            <Button
-              component={Link}
-              to="/profile"
-              variant="contained"
-              color="primary"
-            >
-              Welcome, {user.username}
-            </Button>
-          </Box>
-        )}
         <Box display="flex" marginLeft="auto">
           {!isLoggedIn && (
             <>
@@ -86,6 +62,30 @@ const Header = () => {
                 SignUp
               </Button>
             </>
+          )}
+
+          {isLoggedIn && user && (
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              marginLeft="auto"
+              marginRight="auto"
+            >
+              <Button
+                component={Link}
+                to="/profile"
+                variant="contained"
+                sx={{
+                  margin: 1,
+                  borderRadius: 10,
+                  fontFamily: "Oleo Script",
+                  color: "white",
+                  backgroundColor: "#227187",
+                }}
+              >
+                Welcome, {user.username}
+              </Button>
+            </Box>
           )}
 
           {isLoggedIn && (

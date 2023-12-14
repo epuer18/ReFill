@@ -1,0 +1,90 @@
+/* General Styles */
+body {
+  font-family: "Oleo Script", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Profile Main Container */
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Profile Content Styles */
+.profile-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Profile Picture Styles */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Username Styles */
+.username {
+  font-size: 36px;
+  color: #9d71b1;
+  margin-bottom: 10px;
+}
+
+/* Living Area Styles */
+.living-area,
+.living-area-input {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Button Styles */
+button {
+  background-color: #227187;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #9d71b1;
+}
+
+/* Hide file input */
+#fileInput {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profile-content {
+    padding: 10px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
