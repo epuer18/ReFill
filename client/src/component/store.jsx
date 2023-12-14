@@ -2,17 +2,16 @@ import { combineReducers, configureStore, createSlice } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: { isLoggedIn: false },
+  initialState: { isLoggedIn: false, user: null }, // Updated initial state
   reducers: {
-    login(state) {
+    login(state, action) {
       state.isLoggedIn = true;
-      //   console.log("debug help1");
-      //   console.log(state.isLoggedIn);
-      //   console.log("debug help2");
+      state.user = action.payload; // Updated to store user data
     },
     logout(state) {
       localStorage.removeItem("userId");
       state.isLoggedIn = false;
+      state.user = null; // Clear user data on logout
     },
   },
 });
