@@ -1,5 +1,5 @@
 import "./css/App.css";
-import "@fontsource/lora";
+// import "@fontsource/lora";
 import { Route, Routes } from "react-router-dom";
 import Header from "./component/header.jsx";
 import Login from "./component/login.jsx";
