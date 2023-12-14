@@ -56,6 +56,24 @@ npm run start
 MONGO_URL = "mongodb+srv://<username>:<password><info_database_cluster>"
 ```
 
+## Typography
+
+Heading -- Oleo Script
+
+Paragraphs -- Arial
+
+## Color Palettes
+
+For the pages of this app, we used this color palette:
+
+![color palette](/new_screenshot/color_palette.jpg)
+
+## Lighthouse Accessibility Score
+
+For the accessibility of our web app after improvement:
+
+![Score](/new_screenshot/accessibility.png)
+
 ## Technologies Used:
 
 - JavaScript (ES6)
