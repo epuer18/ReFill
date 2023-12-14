@@ -1,28 +1,53 @@
-.welcome_text {
+.homePage {
+  height: calc(100vh - 64px);
+  padding: 2.5rem 5rem;
+}
+
+.homePage section {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  height: 85%;
   align-items: center;
-  height: 100%;
-  margin: 0 auto;
-  font-size: large;
-  line-height: 2;
-  padding: 4em 1em;
-  color: #566b78;
+  justify-content: center;
+  gap: 2.5rem;
   text-align: center;
-  /*background-image: url("../image/background.jpeg");
-  background-size: cover;
-  background-position: center;
-  height: calc(100vh - 64px);*/
 }
 
-h2 {
-  margin-top: 1em;
-  padding-top: 1em;
+.homePage h1 {
+  color: #227187;
+  font-size: 4.1 rem;
+  line-height: 1.3;
 }
 
-h1,
-h2,
-strong {
-  color: #333;
+.homePage h2 {
+  width: 60%;
+  font-size: 1.5rem;
+  color: #9d71b1;
+  margin-bottom: 2.5rem;
+  font-family: "Playfair Display", sans-serif;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.btn.btn-primary {
+  background-color: #227187; /* primary button color */
+  color: white; /* text color */
+}
+
+.btn.btn-primary:hover {
+  background-color: #9d71b1; /* New background color on hover */
+  color: #fff; /* New text color on hover */
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem; /* example margin-bottom */
 }

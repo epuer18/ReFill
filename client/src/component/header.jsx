@@ -1,21 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { authActions } from "./store.jsx";
-import {
-  AppBar,
-  Typography,
-  Toolbar,
-  Box,
-  Button,
-  Tabs,
-  Tab,
-} from "@mui/material";
+import { AppBar, Typography, Toolbar, Box, Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  const [value, setValue] = useState();
+  const { isLoggedIn, user } = useSelector((state) => state.auth);
+  // const [value, setValue] = useState();
 
   return (
     <AppBar
@@ -39,25 +31,28 @@ const Header = () => {
           </Typography>
         </NavLink>
 
-        {isLoggedIn && (
+        {isLoggedIn && user && (
           <Box
             display="flex"
             justifyContent="flex-start"
             marginLeft="auto"
             marginRight="auto"
           >
-            <Tabs
+            {/* <Tabs
               textColor="inherit"
               value={value}
               onChange={(e, val) => setValue(val)}
+            > */}
+            {/* </Tabs> */}
+
+            <Button
+              component={Link}
+              to="/profile"
+              variant="contained"
+              color="primary"
             >
-              <Tab
-                //className={classes.font}
-                LinkComponent={Link}
-                to="/add"
-                label="Add stations"
-              />
-            </Tabs>
+              Welcome, {user.username}
+            </Button>
           </Box>
         )}
         <Box display="flex" marginLeft="auto">
@@ -72,7 +67,7 @@ const Header = () => {
                   fontWeight: "bold",
                   color: "white",
                   borderRadius: 10,
-                  fontFamily:"Oleo Script",
+                  fontFamily: "Oleo Script",
                 }}
               >
                 Login
@@ -85,7 +80,7 @@ const Header = () => {
                   fontWeight: "bold",
                   color: "white",
                   borderRadius: 10,
-                  fontFamily:"Oleo Script",
+                  fontFamily: "Oleo Script",
                 }}
               >
                 SignUp
@@ -99,7 +94,7 @@ const Header = () => {
               LinkComponent={Link}
               to="/"
               variant="contained"
-              sx={{ margin: 1, borderRadius: 10 , fontFamily:"Oleo Script"}}
+              sx={{ margin: 1, borderRadius: 10, fontFamily: "Oleo Script" }}
               color="warning"
             >
               Logout

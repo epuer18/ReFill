@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -43,8 +43,13 @@ const Login = () => {
       }
 
       if (data.status === "ok") {
+        console.log(inputs.username);
         navigate("/");
-        dispath(authActions.login());
+        dispatch(
+          authActions.login({
+            username: inputs.username,
+          })
+        );
       }
 
       return data; // Handle the response data as needed
@@ -81,7 +86,14 @@ const Login = () => {
           marginTop={5}
           borderRadius={5}
         >
-          <Typography variant="h2" padding={3} textAlign="center" fontFamily="Oleo Script">
+          <Typography
+            variant="h2"
+            padding={3}
+            textAlign="center"
+            sx={{
+              color: "#227187",
+            }}
+          >
             Login
           </Typography>
           <TextField
@@ -102,14 +114,14 @@ const Login = () => {
           <Button
             type="submit"
             variant="contained"
-            sx={{ borderRadius: 3, marginTop: 3, fontFamily:"Roboto" }}
+            sx={{ borderRadius: 3, marginTop: 3 }}
             color="warning"
           >
             Login
           </Button>
           <Button
             onClick={handleNavigation}
-            sx={{ borderRadius: 3, marginTop: 3, fontFamily:"Roboto" }}
+            sx={{ borderRadius: 3, marginTop: 3, fontFamily: "Roboto" }}
           >
             No account? Register
           </Button>
