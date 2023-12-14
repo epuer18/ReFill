@@ -66,7 +66,7 @@ Paragraphs -- Arial
 
 For the pages of this app, we used this color palette:
 
-![color palette](/new_screenshot/color_palette.jpg)
+![color palette](/new_screenshot/color_palette.png)
 
 ## Lighthouse Accessibility Score
 
