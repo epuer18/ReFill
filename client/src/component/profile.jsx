@@ -23,7 +23,8 @@ const Profile = () => {
   const handleLivingAreaChange = (e) => {
     setEditLivingArea(e.target.value);
   };
-
+  
+  // I see your profile picture is added as default Profile Pic, maybe let the user choose their own profile picture to add usability.
   return (
     <main className="profile">
       <div className="profile-content">
