@@ -75,9 +75,5 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 
-// app.get("/add", async (req, res) => {
-//   res.redirect("/api/add");
-// });
-
 app.listen(3000, () => console.log("app started at 3000..."));
 export default app;
